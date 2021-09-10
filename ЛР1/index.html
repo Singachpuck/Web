@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-structures</title>
+
+    <style>
+        :root{
+            --orange: #FDE9D9;
+            --green: #EAF1DD;
+            --blue: #C6D9F1;
+        }
+
+        body{
+            margin: 0;
+            height: 100vh;
+        }
+
+        main{
+            display: flex;
+            height: 100%;
+        }
+
+        aside{
+            display: flex;
+            flex-direction: column;
+            min-width: 20%;
+            max-width: 20%;
+            height: 100%;
+            margin-right: 5%;
+        }
+
+        .navigation{
+            font-size: 24px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-item{
+            margin-bottom: 20px;
+        }
+
+        .nav-item:last-of-type{
+            margin-bottom: 0;
+        }
+
+        section{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            height: 100%;
+        }
+
+        .moto-wrapper{
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1em 3em;
+        }
+
+        .moto-container{
+            box-sizing: border-box;
+            width: 40%;
+            min-height: calc(100% / 3);
+            background-color: #fff;
+            border: 1px solid gray;
+            padding: 1em;
+        }
+
+        .moto-reverse{
+            text-align: right;
+        }
+
+        .small-paragraph{
+            width: 40%;
+        }
+
+        .main-aside{
+            box-sizing: border-box;
+            background-color: var(--orange);
+            padding: 1em;
+            flex-grow: 5;
+        }
+
+        .footer-aside{
+            box-sizing: border-box;
+            background-color: var(--green);
+            padding: 1em;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .header-section{
+            background-color: var(--blue);
+        }
+        
+        .main-section{
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+
+        .main-section > p {
+            width: 50%;
+        }
+
+        .footer-section{
+            background-color: var(--blue);
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <aside>
+            <nav class="main-aside">
+                <ul class="navigation">
+                    <li class="nav-item">
+                        <a href="#">You are here</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./index2.html">Index 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./index3.html">Index 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./index4.html">Index 4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./index5.html">Index 5</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer-aside">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, deserunt.
+            </div>
+        </aside>
+        <section>
+            <div class="moto-wrapper header-section">
+                <h3 class="moto-container">
+                    Lorem, ipsum dolor.
+                </h3>
+                <p class="small-paragraph moto-reverse">
+                    Lorem ipsum dolor sit amet.
+                </p>
+            </div>
+            <div class="main-section">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?
+                </p>
+            </div>
+            <div class="moto-wrapper footer-section">
+                <p class="small-paragraph">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                </p>
+                <h3 class="moto-container">
+                    Lorem, ipsum dolor.
+                </h3>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
