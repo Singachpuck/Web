@@ -11,16 +11,19 @@
             --orange: #FDE9D9;
             --green: #EAF1DD;
             --blue: #C6D9F1;
+            --left-side-margin: 5%;
         }
 
         body{
+            display: flex;
+            flex-direction: column;
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         main{
             display: flex;
-            height: 100%;
+            flex-grow: 1;
         }
 
         aside{
@@ -28,8 +31,7 @@
             flex-direction: column;
             min-width: 20%;
             max-width: 20%;
-            height: 100%;
-            margin-right: 5%;
+            margin-right: var(--left-side-margin);
         }
 
         .navigation{
@@ -65,7 +67,6 @@
         .moto-container{
             box-sizing: border-box;
             width: 40%;
-            min-height: calc(100% / 3);
             background-color: #fff;
             border: 1px solid gray;
             padding: 1em;
@@ -86,14 +87,6 @@
             flex-grow: 5;
         }
 
-        .footer-aside{
-            box-sizing: border-box;
-            background-color: var(--green);
-            padding: 1em;
-            text-align: center;
-            flex-grow: 1;
-        }
-
         .header-section{
             background-color: var(--blue);
         }
@@ -109,8 +102,22 @@
             width: 50%;
         }
 
-        .footer-section{
-            background-color: var(--blue);
+        footer{
+            display: flex;
+        }
+
+        .aside-footer-part {
+            box-sizing: border-box;
+            padding: 20px 10px;
+            background-color: var(--green);
+            min-width: 20%;
+            max-width: 20%;
+            text-align: center;
+            margin-right: var(--left-side-margin);
+        }
+
+        .main-footer-part {
+            background-color: var(--blue);  
         }
 
     </style>
@@ -121,7 +128,7 @@
             <nav class="main-aside">
                 <ul class="navigation">
                     <li class="nav-item">
-                        <a href="./index.html">Index 1</a>
+                        <a href="./index3.html">Index 1</a>
                     </li>
                     <li class="nav-item">
                         <a href="./index2.html">Index 2</a>
@@ -137,9 +144,9 @@
                     </li>
                 </ul>
             </nav>
-            <div class="footer-aside">
+            <!-- <footer class="footer-aside">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, deserunt.
-            </div>
+            </footer> -->
         </aside>
         <section>
             <div class="moto-wrapper header-section">
@@ -148,6 +155,49 @@
                 </h3>
                 <p class="small-paragraph moto-reverse">
                     Lorem ipsum dolor sit amet.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                    
                 </p>
             </div>
             <div class="main-section">
@@ -156,17 +206,225 @@
                     Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
                     accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
                     Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?
+                    
                 </p>
             </div>
-            <div class="moto-wrapper footer-section">
-                <p class="small-paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
-                </p>
-                <h3 class="moto-container">
-                    Lorem, ipsum dolor.
-                </h3>
-            </div>
+            <!-- <div class="moto-wrapper footer-section">
+                
+            </div> -->
         </section>
     </main>
+    <footer>
+        <div class="aside-footer-part">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, deserunt.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+            accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?
+        </div>
+        <div class="main-footer-part moto-wrapper">
+            <p class="small-paragraph">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?
+            </p>
+            <h3 class="moto-container">
+                Lorem, ipsum dolor.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?
+            </h3>
+        </div>
+    </footer>
 </body>
 </html>
