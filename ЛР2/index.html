@@ -37,7 +37,7 @@
                 <h3 class="moto-container">
                     Lorem, ipsum dolor.
                 </h3>
-                <p class="small-paragraph moto-reverse">
+                <p class="small-paragraph">
                     Lorem ipsum dolor sit amet.
                 </p>
             </header>
@@ -53,6 +53,21 @@
                 <input id="split-number-input" type="text" placeholder="type a number...">
                 <button id="split-button">Split</button>
             </div>
+            <hr>
+            <form>
+                <h3>Right alignment:</h3>
+                <div>
+                    <label>
+                        <input id="rightAlignFirst" type="checkbox"> First block
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input id="rightAlignSecond" type="checkbox"> Second block
+                    </label>
+                </div>
+                <div class="hover-block"></div>
+            </form>
         </section>
     </main>
     <footer>
@@ -61,10 +76,12 @@
             Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
         </div>
         <div class="main-footer-part moto-wrapper">
-            <p class="small-paragraph">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat facilis esse et! Eveniet, iure ullam.
-                Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
-            </p>
+            <div class="small-paragraph">
+                <ul id="list"></ul>
+                <button class="block" id="addItemButton">Add Item</button>
+                <button class="block" id="saveItemsToLocalStorage">Save to Local Storage</button>
+                <button class="block" id="clearLocalStorage">Clear Local Storage</button>
+            </div>
             <h3 class="moto-container">
                 Lorem, ipsum dolor.
             </h3>

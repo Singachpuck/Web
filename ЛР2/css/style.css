@@ -28,6 +28,18 @@ aside{
     padding: 1em;
 }
 
+ul {
+    padding: 0;
+}
+
+.block {
+    display: block;
+}
+
+button {
+    margin-bottom: 5px;
+}
+
 .navigation{
     font-size: 24px;
     padding: 0;
@@ -112,4 +124,19 @@ footer{
 
 .main-footer-part {
     background-color: var(--blue);  
+}
+
+.hover-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(236, 236, 236);
+    margin: 10px 0;
+}
+
+.hover-block::before {
+    content: "Hover me!!!";
 }

@@ -1,8 +1,15 @@
 window.onload = () => {
-    let firstBlock = document.querySelector('aside'),
+    const firstBlock = document.querySelector('aside'),
         secondBlock = document.querySelector('.header-section > .small-paragraph'),
         thirdBlock = document.querySelector('.main-section > p'),
-        splitButton = document.querySelector('#split-button');
+        splitButton = document.querySelector('#split-button'),
+        firstCheckbox = document.querySelector('#rightAlignFirst'),
+        secondCheckbox = document.querySelector('#rightAlignSecond'),
+        hoverBlock = document.querySelector('.hover-block'),
+        list = document.querySelector('#list'),
+        addItemButtom = document.querySelector('#addItemButton'),
+        saveItemsToLocalStorageButton = document.querySelector('#saveItemsToLocalStorage'),
+        clearLocalStorageButton = document.querySelector('#clearLocalStorage');
 
     const a = 2, b = 4;
 
@@ -18,13 +25,26 @@ window.onload = () => {
         
         document.cookie = `splitNumber=${dividers.toString()};`;
 
-        console.log(document.cookie);
-
         alert(dividers);
     });
 
     function init() {
-        const calculatorBlock = document.querySelector('.divider-calculator');
+        const calculatorBlock = document.querySelector('.divider-calculator'),
+            items = localStorage.getItem('items'),
+            alignment = localStorage.getItem('align'),
+            alignmentBlocks = [firstBlock, secondBlock];
+
+        list.innerHTML = '';
+
+        items && items.split(';').forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            list.appendChild(li);
+        });
+
+        alignment && alignment.split(';').forEach((al, index) => {
+            alignmentBlocks[index].style.textAlign = al;
+        });
 
         if (document.cookie !== '') {
             calculatorBlock.setAttribute('style', 'display: none;');
@@ -38,6 +58,53 @@ window.onload = () => {
         } else {
             calculatorBlock.removeAttribute('style');
         }
+
+        hoverBlock.addEventListener('mouseover', () => {
+            let localStorageQuery = '';
+
+            if (firstCheckbox.checked) {
+                firstBlock.style.textAlign = 'right';
+                localStorageQuery += 'right;';
+            } else {
+                firstBlock.style.textAlign = 'unset';
+                localStorageQuery += 'unset;';
+            }
+
+            if (secondCheckbox.checked) {
+                secondBlock.style.textAlign = 'right';
+                localStorageQuery += 'right';
+            } else {
+                secondBlock.style.textAlign = 'unset';
+                localStorageQuery += 'unset';
+            }
+
+            localStorage.setItem('align', localStorageQuery);
+        });
+
+        addItemButtom.addEventListener('click', () => {
+            const item = document.createElement('li');
+
+            item.textContent = 'Item ' + (list.children.length + 1);
+
+            list.appendChild(item);
+        });
+
+        saveItemsToLocalStorageButton.addEventListener('click', () => {
+            let items = '';
+
+            [...list.children].forEach(child => {
+                items += child.textContent + ';';
+            });
+
+            items = items.substr(0, items.length - 1);
+
+            localStorage.setItem('items', items);
+        });
+
+        clearLocalStorageButton.addEventListener('click', () => {
+            localStorage.removeItem('items');
+            location.reload();
+        });
     }
 
     function swapText(el1, el2) {
