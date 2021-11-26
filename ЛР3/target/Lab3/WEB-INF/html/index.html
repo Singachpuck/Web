@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>HTML-structures</title>
+</head>
+<body>
+    <main>
+        <aside>
+            <nav class="main-aside">
+                <ul class="navigation">
+                    <li class="nav-item">
+                        <a href="#">You are here</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./index2.html">Index 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./index3.html">Index 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./index4.html">Index 4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./index5.html">Index 5</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <section>
+            <header class="moto-wrapper header-section">
+                <h3 class="moto-container">
+                    Lorem, ipsum dolor.
+                </h3>
+                <p class="small-paragraph">
+                    Lorem ipsum dolor sit amet.
+                </p>
+            </header>
+            <div class="main-section">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+                    Ipsam id maiores reiciendis recusandae, quis fugiat, asperiores in vitae nobis saepe provident animi
+                    accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
+                    Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?
+                </p>
+            </div>
+            <div class="divider-calculator">
+                <input id="split-number-input" type="text" placeholder="type a number...">
+                <button id="split-button">Split</button>
+            </div>
+            <hr>
+            <form class="right-alignment">
+                <h3>Right alignment:</h3>
+                <div>
+                    <label>
+                        <input id="rightAlignFirst" type="checkbox"> First block
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input id="rightAlignSecond" type="checkbox"> Second block
+                    </label>
+                </div>
+                <div class="hover-block"></div>
+            </form>
+            <hr>
+            <div class="object-creation-wrapper">
+                <h3>Creation of objects:</h3>
+                <ul class="parameter-list">
+                    <li class="parameter-item">
+                        Direction:
+                        <ul class="parameter-direction">
+                            <li>
+                                <label>
+                                    <input type="radio" name="objects-order" value="column"
+                                           th:attr="checked=${settings['direction'] == 'column'} ? true : false"> Column
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="objects-order" value="row"
+                                           th:attr="checked=${settings['direction'] == 'row'} ? true : false"> Row
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="parameter-item">
+                        Font size:
+                        <input class="object-font" type="number" placeholder="Enter object font size" value="16">
+                    </li>
+                    <li class="parameter-item">
+                        <input class="object-input" type="text" placeholder="Enter object text">
+                        <button class="add-object-button">Add object</button>
+                    </li>
+                </ul>
+                <ul class="object-list"></ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="aside-footer-part">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, deserunt.
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+        </div>
+        <div class="main-footer-part moto-wrapper">
+            <div class="small-paragraph">
+                <ul id="list"></ul>
+                <button class="block" id="addItemButton">Add Item</button>
+                <button class="block" id="saveItemsToLocalStorage">Save to Local Storage</button>
+                <button class="block" id="clearLocalStorage">Clear Local Storage</button>
+            </div>
+            <h3 class="moto-container">
+                Lorem, ipsum dolor.
+            </h3>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
