@@ -38,14 +38,6 @@
       <version>${spring.version}</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-admin -->
-    <dependency>
-      <groupId>com.google.firebase</groupId>
-      <artifactId>firebase-admin</artifactId>
-      <version>${firebase.version}</version>
-    </dependency>
-
-
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
     <dependency>
       <groupId>org.springframework</groupId>
