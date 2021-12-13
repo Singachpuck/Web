@@ -1,0 +1,165 @@
+@import url("./gliph.css");
+
+:root{
+    --orange: #FDE9D9;
+    --green: #EAF1DD;
+    --blue: #C6D9F1;
+    --left-side-margin: 5%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+}
+
+main{
+    display: flex;
+    flex-grow: 1;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    min-width: 20%;
+    max-width: 20%;
+    margin-right: var(--left-side-margin);
+    box-sizing: border-box;
+    background-color: var(--orange);
+    padding: 1em;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+.block {
+    display: block;
+}
+
+button {
+    margin-bottom: 5px;
+}
+
+.navigation{
+    font-size: 24px;
+    padding: 0;
+}
+
+.nav-item{
+    margin-bottom: 20px;
+}
+
+.nav-item:last-of-type{
+    margin-bottom: 0;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.moto-wrapper{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1em 3em;
+}
+
+.moto-container{
+    box-sizing: border-box;
+    width: 40%;
+    background-color: #fff;
+    border: 1px solid gray;
+    padding: 1em;
+}
+
+.moto-reverse{
+    text-align: right;
+}
+
+.small-paragraph{
+    width: 40%;
+}
+
+.main-aside{
+    flex-grow: 5;
+}
+
+.header-section{
+    background-color: var(--blue);
+}
+
+.main-section{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.main-section > p {
+    width: 50%;
+}
+
+footer{
+    display: flex;
+}
+
+.aside-footer-part {
+    box-sizing: border-box;
+    padding: 20px 10px;
+    background-color: var(--green);
+    min-width: 20%;
+    max-width: 20%;
+    text-align: center;
+    margin-right: var(--left-side-margin);
+}
+
+.main-footer-part {
+    background-color: var(--blue);  
+}
+
+.hover-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(236, 236, 236);
+    margin: 10px 0;
+}
+
+.hover-block::before {
+    content: "Hover me!!!";
+}
+
+.object-list {
+    flex-wrap: wrap;
+}
+
+.parameter-list > li {
+    margin-bottom: 15px;
+}
+
+.parameter-list > li:last-of-type {
+    margin-bottom: 0;
+}
+
+.object-list > li > span {
+    cursor: pointer;
+}
+
+.object {
+    margin-bottom: 15px;
+}
+
+.object:last-of-type {
+    margin-bottom: 0;
+}

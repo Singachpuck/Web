@@ -20,7 +20,6 @@
     <thymeleaf.version>3.0.12.RELEASE</thymeleaf.version>
     <data.version>2.6.0</data.version>
     <hibernate.version>5.4.32.Final</hibernate.version>
-    <firebase.version>8.1.0</firebase.version>
   </properties>
 
   <dependencies>
