@@ -4,4 +4,5 @@ import com.example.lab4.model.Setting;
 import org.springframework.data.repository.CrudRepository;
 
 public interface SettingsDao extends CrudRepository<Setting, String> {
+    Setting getByName(String name);
 }

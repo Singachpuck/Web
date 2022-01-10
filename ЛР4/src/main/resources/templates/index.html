@@ -48,64 +48,65 @@
                     accusantium odio porro explicabo doloremque, incidunt quam esse laudantium voluptatem! Ullam, tempore.
                     Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?
                 </p>
-            </div>
-            <div class="divider-calculator">
-                <input id="split-number-input" type="text" placeholder="type a number...">
-                <button id="split-button">Split</button>
-            </div>
-            <hr>
-            <form class="right-alignment">
-                <h3>Right alignment:</h3>
-                <div>
-                    <label>
-                        <input id="rightAlignFirst" type="checkbox"> First block
-                    </label>
+                <div class="divider-calculator">
+                    <input id="split-number-input" type="text" placeholder="type a number...">
+                    <button id="split-button">Split</button>
                 </div>
-                <div>
-                    <label>
-                        <input id="rightAlignSecond" type="checkbox"> Second block
-                    </label>
+                <hr>
+                <form class="right-alignment">
+                    <h3>Right alignment:</h3>
+                    <div>
+                        <label>
+                            <input id="rightAlignFirst" type="checkbox"> First block
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input id="rightAlignSecond" type="checkbox"> Second block
+                        </label>
+                    </div>
+                    <div class="hover-block"></div>
+                </form>
+                <hr>
+                <div class="object-creation-wrapper">
+                    <h3>Creation of objects:</h3>
+                    <ul class="parameter-list">
+                        <li class="parameter-item">
+                            Direction:
+                            <ul class="parameter-direction">
+                                <li>
+                                    <label>
+                                        <input type="radio" name="objects-order" value="column"
+                                               th:attr="checked=${settings['direction'] == 'column'} ? true : false"> Column
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="objects-order" value="row"
+                                               th:attr="checked=${settings['direction'] == 'row'} ? true : false"> Row
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="parameter-item">
+                            Font size:
+                            <input class="object-font" type="number" placeholder="Enter object font size" value="16">
+                        </li>
+                        <li class="parameter-item">
+                            <input class="object-input" type="text" placeholder="Enter object text">
+                            <button class="add-object-button">Add object</button>
+                        </li>
+                    </ul>
+                    <ul class="object-list"></ul>
                 </div>
-                <div class="hover-block"></div>
-            </form>
-            <hr>
-            <div class="object-creation-wrapper">
-                <h3>Creation of objects:</h3>
-                <ul class="parameter-list">
-                    <li class="parameter-item">
-                        Direction:
-                        <ul class="parameter-direction">
-                            <li>
-                                <label>
-                                    <input type="radio" name="objects-order" value="column"
-                                           th:attr="checked=${settings['direction'] == 'column'} ? true : false"> Column
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="radio" name="objects-order" value="row"
-                                           th:attr="checked=${settings['direction'] == 'row'} ? true : false"> Row
-                                </label>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="parameter-item">
-                        Font size:
-                        <input class="object-font" type="number" placeholder="Enter object font size" value="16">
-                    </li>
-                    <li class="parameter-item">
-                        <input class="object-input" type="text" placeholder="Enter object text">
-                        <button class="add-object-button">Add object</button>
-                    </li>
-                </ul>
-                <ul class="object-list"></ul>
             </div>
         </section>
     </main>
     <footer>
         <div class="aside-footer-part">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, deserunt.
-            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!
+            Laboriosam repellat ipsa error delectus dolore nam excepturi itaque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at ipsam a neque recusandae saepe!<br>
+            <button class="play">Play</button>
         </div>
         <div class="main-footer-part moto-wrapper">
             <div class="small-paragraph">
@@ -121,5 +122,6 @@
     </footer>
 
     <script src="/js/script.js"></script>
+    <script src="/js/animation.js"></script>
 </body>
 </html>

@@ -6,13 +6,11 @@ import com.example.lab4.dao.SettingsDao;
 import com.example.lab4.model.Setting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/settings")
@@ -44,6 +42,16 @@ public class SettingController {
                     .badRequest()
                     .header("Content-Type", "application/json")
                     .body("{\"success\": false, \"error\": \""+ e.getMessage() +"\"}");
+        }
+    }
+
+    @GetMapping("/{settingName}")
+    public Map<String, Object> getSetting(@PathVariable String settingName) {
+        try {
+            return Map.of(settingName, settingsDao.getByName(settingName).getValue());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Map.of("success", false, "message", e.getMessage());
         }
     }
 }
