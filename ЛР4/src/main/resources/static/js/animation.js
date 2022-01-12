@@ -37,8 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     start = document.createElement('button'),
                     close = document.createElement('button'),
                     reload = document.createElement('button'),
-                    message = document.createElement('p'),
-                    canv = document.createElement('canvas');
+                    message = document.createElement('p');
 
                 playButton.addEventListener('click', () => {
                     localStorage.setItem('animLog', '');
@@ -48,15 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem('animLog',
                         localStorage.getItem('animLog') + ';' + new Date().toLocaleString() + '&' + 'Switched to Animation');
 
-                    canv.width = anim.offsetWidth - 10;
-                    canv.height = anim.offsetHeight - 10;
+                    setHeightDuration();
+                    setWidthDuration();
+
+                    generateCircles();
                 });
 
                 close.addEventListener('click', () => {
                     thirdBlock.style.display = 'block';
                     newMainSection.style.display = 'none';
-
-                    console.log(firstBlock);
 
                     localStorage.setItem('animLog',
                         localStorage.getItem('animLog') + ';' + new Date().toLocaleString() + '&' + 'Animation Closed');
@@ -81,52 +80,51 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.removeItem('animLog');
                 });
 
-                let x1 = undefined,
-                    y1 = undefined,
-                    x2 = undefined,
-                    y2 = undefined,
-                    speed = 0,
-                    speedInterval = undefined;
+                let speed = 150,
+                    collisionInterval = undefined,
+                    circle1StartAnimDuration = undefined,
+                    circle2StartAnimDuration = undefined,
+                    circle1 = document.createElement('div'),
+                    circle2 = document.createElement('div'),
+                    widthDuration = undefined,
+                    heightDuration = undefined;
 
-                anim.appendChild(canv);
+                anim.appendChild(circle1);
+                anim.appendChild(circle2);
                 work.appendChild(controls);
                 work.appendChild(anim);
                 newMainSection.appendChild(work);
 
                 const controlsHeight = parseFloat(settings["controlsHeight"]),
-                    circleRadius = parseFloat(settings["circleRadius"]),
+                    circleRadius = 10,
                     firstCircleColor = 'yellow',
                     secondCircleColor = 'red';
 
-                let prevTime = undefined,
-                    direction = undefined,
+                let direction = undefined,
                     collied = false;
+
+                circle1.style.position = 'absolute';
+                circle2.style.position = 'absolute';
+
+                circle1.style.width = '20px';
+                circle1.style.height = '20px';
+                circle2.style.width = '20px';
+                circle2.style.height = '20px';
+
+                circle1.style.backgroundColor = firstCircleColor;
+                circle2.style.backgroundColor = secondCircleColor;
+
+                circle1.style.borderRadius = '50%';
+                circle2.style.borderRadius = '50%';
 
                 newMainSection.style.height = '400px';
 
                 work.style.height = '100%';
 
+                anim.style.position = 'relative';
                 anim.style.width = 'calc(100% - 10px)';
                 anim.style.height = 'calc(100% - 50px)';
                 anim.style.border = '5px solid green';
-
-                CanvasRenderingContext2D.prototype.clear =
-                    CanvasRenderingContext2D.prototype.clear || function (preserveTransform) {
-                        if (preserveTransform) {
-                            this.save();
-                            this.setTransform(1, 0, 0, 1, 0, 0);
-                        }
-
-                        this.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-                        if (preserveTransform) {
-                            this.restore();
-                        }
-                    };
-
-                generateCircles();
-
-                window.requestAnimationFrame(moveCircles);
 
                 controls.style.height = controlsHeight + 'px';
 
@@ -134,13 +132,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 start.style.margin = '0 auto';
 
                 start.addEventListener('click', (e) => {
-                    clearInterval(speedInterval);
+                    moveCircle('yellowCircle');
+                    moveCircle('redCircle');
 
-                    speedInterval = setInterval(() => {
-                        speed += 10;
-                    }, 1000);
+                    collisionInterval = setInterval(() => {
+                        let x1 = circle1.offsetLeft,
+                            y1 = circle1.offsetTop,
+                            x2 = circle2.offsetLeft,
+                            y2 = circle2.offsetTop;
 
-                    speed = 100;
+                        if (collision(x1, y1, circleRadius,
+                                        x2, y2, circleRadius)) {
+                            circle1.getAnimations().forEach(animation => {
+                                animation.pause();
+                            });
+
+                            circle2.getAnimations().forEach(animation => {
+                                animation.pause();
+                            });
+
+                            message.innerText = 'Balls Collided!';
+
+                            localStorage.setItem('animLog',
+                                localStorage.getItem('animLog') + ';' + new Date().toLocaleString() + '&' + 'Balls Collided!');
+                        }
+                    }, 100);
+
                     start.disabled = true;
                     start.style.display = 'none';
                     reload.style.display = 'initial';
@@ -156,10 +173,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 reload.style.margin = '0 auto';
 
                 reload.addEventListener('click', (e) => {
-                    clearInterval(speedInterval);
+                    circle1.getAnimations().forEach(animation => {
+                        animation.cancel();
+                    });
+
+                    circle2.getAnimations().forEach(animation => {
+                        animation.cancel();
+                    });
+
+                    speed = 150;
 
                     generateCircles();
-                    speed = 0;
                     start.disabled = false;
                     start.style.display = 'initial';
                     reload.style.display = 'none';
@@ -180,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 function generateCircles() {
                     collied = false;
-                    prevTime = performance.now();
+
                     direction = Math.random() > 0.5 ? {
                         'yellowCircle': Math.random() > 0.5 ? 'left' : 'right',
                         'redCircle': Math.random() > 0.5 ? 'up' : 'down'
@@ -189,112 +213,174 @@ document.addEventListener('DOMContentLoaded', () => {
                         'redCircle': Math.random() > 0.5 ? 'left' : 'right'
                     };
 
-                    x1 = getRandomArbitrary(circleRadius, canv.width - circleRadius);
-                    y1 = getRandomArbitrary(circleRadius, canv.height - circleRadius);
-                    x2 = getRandomArbitrary(circleRadius, canv.width - circleRadius);
-                    y2 = getRandomArbitrary(circleRadius, canv.height - circleRadius);
+                    circle1.style.top = getRandomArbitrary(0, anim.offsetHeight - 20) + 'px';
+                    circle1.style.left = getRandomArbitrary(0, anim.offsetWidth - 20) + 'px';
+                    circle2.style.top = getRandomArbitrary(0, anim.offsetHeight - 20) + 'px';
+                    circle2.style.left = getRandomArbitrary(0, anim.offsetWidth - 20) + 'px';
+
+                    parseCircleTime();
                 }
 
-                function moveCircles() {
-                    const ctx = canv.getContext('2d');
-                    let nowPerformance = performance.now();
-                    const delta = (nowPerformance - prevTime) / 1000;
-
-                    prevTime = nowPerformance;
-
-                    if (collision(x1, y1, circleRadius, x2, y2, circleRadius)) {
-                        clearInterval(speedInterval);
-                        speed = 0;
-
-                        message.innerText = 'Circles collided!';
-                        if (!collied) {
-                            localStorage.setItem('animLog',
-                                localStorage.getItem('animLog') + ';' + new Date().toLocaleString() + '&' + 'Balls Collided');
-                            collied = true;
-                        }
-                    }
-
-                    if (x1 + circleRadius >= canv.width) {
-                        direction['yellowCircle'] = 'left';
-                    }
-
-                    if (x1 - circleRadius <= 0) {
-                        direction['yellowCircle'] = 'right';
-                    }
-
-                    if (y1 + circleRadius >= canv.height) {
-                        direction['yellowCircle'] = 'up';
-                    }
-
-                    if (y1 - circleRadius <= 0) {
-                        direction['yellowCircle'] = 'down';
-                    }
-
-                    if (x2 + circleRadius >= canv.width) {
-                        direction['redCircle'] = 'left';
-                    }
-
-                    if (x2 - circleRadius <= 0) {
-                        direction['redCircle'] = 'right';
-                    }
-
-                    if (y2 + circleRadius >= canv.height) {
-                        direction['redCircle'] = 'up';
-                    }
-
-                    if (y2 - circleRadius <= 0) {
-                        direction['redCircle'] = 'down';
-                    }
-
-                    ctx.clear();
-
-                    ctx.beginPath();
-                    ctx.fillStyle = firstCircleColor;
-                    ctx.arc(Math.floor(x1), Math.floor(y1), circleRadius, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
-                    ctx.beginPath();
-                    ctx.fillStyle = secondCircleColor;
-                    ctx.arc(Math.floor(x2), Math.floor(y2), circleRadius, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
+                function parseCircleTime() {
                     if (direction['yellowCircle'] === 'left') {
-                        x1 -= delta * speed;
+                        circle1StartAnimDuration = circle1.offsetLeft * 1000 / speed;
 
                         if (direction['redCircle'] === 'up') {
-                            y2 -= delta * speed;
+                            circle2StartAnimDuration = circle2.offsetTop * 1000 / speed;
                         } else {
-                            y2 += delta * speed;
+                            circle2StartAnimDuration =
+                                (anim.offsetHeight - circle2.offsetTop) * 1000 / speed;
                         }
                     } else if (direction['yellowCircle'] === 'right') {
-                        x1 += delta * speed;
+                        circle1StartAnimDuration =
+                            (anim.offsetWidth - circle1.offsetLeft) * 1000 / speed;
 
                         if (direction['redCircle'] === 'up') {
-                            y2 -= delta * speed;
+                            circle2StartAnimDuration = circle2.offsetTop * 1000 / speed;
                         } else {
-                            y2 += delta * speed;
+                            circle2StartAnimDuration =
+                                (anim.offsetHeight - circle2.offsetTop) * 1000 / speed;
                         }
                     } else if (direction['yellowCircle'] === 'up') {
-                        y1 -= delta * speed;
+                        circle1StartAnimDuration = circle1.offsetTop * 1000 / speed;
 
                         if (direction['redCircle'] === 'left') {
-                            x2 -= delta * speed;
+                            circle2StartAnimDuration = circle2.offsetLeft * 1000 / speed;
                         } else {
-                            x2 += delta * speed;
+                            circle2StartAnimDuration =
+                                (anim.offsetWidth - circle2.offsetLeft) * 1000 / speed;
                         }
                     } else {
-                        y1 += delta * speed;
+                        circle1StartAnimDuration =
+                            (anim.offsetHeight - circle1.offsetTop) * 1000 / speed;
 
                         if (direction['redCircle'] === 'left') {
-                            x2 -= delta * speed;
+                            circle2StartAnimDuration = circle2.offsetLeft * 1000 / speed;
                         } else {
-                            x2 += delta * speed;
+                            circle2StartAnimDuration =
+                                (anim.offsetWidth - circle2.offsetLeft) * 1000 / speed;
+                        }
+                    }
+                }
+
+                function moveCircle(circleName) {
+                    let circle, duration, animation;
+
+                    if (circleName === 'yellowCircle') {
+                        circle = circle1;
+                        duration = circle1StartAnimDuration;
+                    } else {
+                        circle = circle2;
+                        duration = circle2StartAnimDuration;
+                    }
+
+                    if (direction[circleName] === 'left') {
+                        animation = circle.animate({
+                            left: 0
+                        }, {
+                            duration: duration,
+                            iterations: 1,
+                            fill: "forwards"
+                        });
+
+                        animation.onfinish = () => {
+                            direction[circleName] = 'right';
+                            speed += 20;
+
+                            setWidthDuration();
+
+                            if (circleName === 'yellowCircle') {
+                                circle1StartAnimDuration = widthDuration;
+                            }
+                            else {
+                                circle2StartAnimDuration = widthDuration;
+                            }
+
+                            moveCircle(circleName);
+                        }
+                    } else if (direction[circleName] === 'right') {
+                        animation = circle.animate({
+                            left: anim.offsetWidth - 2 * circleRadius - 10  + 'px'
+                        }, {
+                            duration: duration,
+                            iterations: 1,
+                            fill: "forwards"
+                        });
+
+                        animation.onfinish = () => {
+                            direction[circleName] = 'left';
+                            speed += 20;
+
+                            setWidthDuration();
+
+                            if (circleName === 'yellowCircle') {
+                                circle1StartAnimDuration = widthDuration;
+                            }
+                            else {
+                                circle2StartAnimDuration = widthDuration;
+                            }
+
+                            moveCircle(circleName);
+                        }
+                    } else if (direction[circleName] === 'up') {
+                        animation = circle.animate({
+                            top: 0
+                        }, {
+                            duration: duration,
+                            iterations: 1,
+                            fill: "forwards"
+                        });
+
+                        animation.onfinish = () => {
+                            direction[circleName] = 'down';
+                            speed += 20;
+
+                            setHeightDuration();
+
+                            if (circleName === 'yellowCircle') {
+                                circle1StartAnimDuration = heightDuration;
+                            }
+                            else {
+                                circle2StartAnimDuration = heightDuration;
+                            }
+
+                            moveCircle(circleName);
+                        }
+                    } else {
+                        animation = circle.animate({
+                            top: anim.offsetHeight - 2 * circleRadius - 10 + 'px'
+                        }, {
+                            duration: duration,
+                            iterations: 1,
+                            fill: "forwards"
+                        });
+
+                        animation.onfinish = () => {
+                            direction[circleName] = 'up';
+                            speed += 20;
+
+                            setHeightDuration()
+
+                            if (circleName === 'yellowCircle') {
+                                circle1StartAnimDuration = heightDuration;
+                            }
+                            else {
+                                circle2StartAnimDuration = heightDuration;
+                            }
+
+                            moveCircle(circleName);
                         }
                     }
 
-                    window.requestAnimationFrame(moveCircles);
+                    return animation;
+                }
+
+                function setHeightDuration() {
+                    heightDuration = anim.offsetHeight * 1000 / speed;
+                }
+
+                function setWidthDuration() {
+                    widthDuration = anim.offsetWidth * 1000 / speed;
                 }
 
                 function getRandomArbitrary(min, max) {
